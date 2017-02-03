@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="FaviconBadge.widget.FaviconBadge" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>FaviconBadge</name>
+    <description>Shows a badge next to your favicon.</description>
+
+    <icon>iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAYAAACzK0UYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN+SURBVEhLhVXLS1RRGP/dO3NHwiZnmulFBCVBRS+LICpbmJQtpFYuItEgDGoj9BfUJnAbtaiFYQRBEYGhuTDSysTQgXFMNyJYJDqpmTk6z3v6vjNzbmemmfrB4Xud73nOuddobW0VLS0tKAYhRB5V0PW6rVBmsGz09/eLYDCYU2VR6KhThUJ9KcowA4FAnkLnS4H3FC4dusy8meP/i3g8jkwmg66ubvT09CCdTiORSOSs/4ZMYhiGUxHzDNu2ZdBYLCbl1697MDDwEalUkvQ2BgcH0d3dLW0imS2gsCMFmaSwPYZpmnL19fWho6MDlZW7MDExTnYgmUxg/PM4tu0+hO0DD+H79BQul4srK5qo5LgmJyfR2fkKtbW1+PZtBvPz86Q1EI1GsRCdww/bwknXV/imBhCrqkffu/dYWlpyJqHDLJaZR+XxeDA9PY329nZUV5+SSRsbL6NiwwZ4K/y4frkBOyZ7EalqQtuTLkyMhuHbuDEXIR/G6Ojo31ly4AJ47lx9c3OzrDK+ugqaDSzLjRQEHjx7hQqvB2eOH0eEzuzE6Wp4vV7Hn+EkUW0qA3ejdHyT3G73n3mTbD1+DPHzJ+wvXzBLSd+kMsicP4dLZ89S6nw4B89BeTnZtVsmExBluMbG4G9sxM7eXuzfswd76+pQPTuLG0ODuLSwgDfUjX4uHM8Ih8OFiR3IDeSgijDprZRTguDKCsrDYXmb6LFArF+P6LFjWDczg0d151Fz+5ZTLNOSV1iBZUHj4etsvXiBwNQUYgcOwNq6FQtXr+L7lSvwbNoE98GDWKH9TWORrKMGU41IH5filax0xtwcPyAkhoawRu8nePcuAvfvZ+W3b5GiYlbpjPQ4TJ1O9KVD6ojaFMCgt5Ik2eX3w+XzIb24CLG8DJOuNX0E5Wht7TwUZBI26qsQBgU2+fArK1FGfFlNDTxVVZi/dg3fm5pg7duH8vp6mUCPoXg5rlLL6Y5GxDR1+DBWysogIhHYv35hy/Pn2PzyJQRdhHgoBD/5rF248Mcvt4xQKJQ/nxIQ9AHk87A4cFsb7KNHsa6hQerWOjthffiAxSNHsHzvHoRl5byyMEZGRv6bhKuRlM+FxuamgIE7d5Ckd5EmG4dMXLyI5Zs3Qd8juZeh/Izh4WHJqTkqgw7ZMtlL2RRK2U3142FBbSrmqOsUiu3TwTohBH4DtI95hzLh6AcAAAAASUVORK5CYII=</icon>
+
+    <properties>
+        <property key="animation" type="enumeration" defaultValue="pop">
+            <caption>Badge animation</caption>
+            <category>Appearance</category>
+            <description>Animation </description>
+            <enumerationValues>
+                <enumerationValue key="pop">Pop</enumerationValue>
+                <enumerationValue key="slide">Slide</enumerationValue>
+                <enumerationValue key="fade">Fade</enumerationValue>
+                <enumerationValue key="popFade">Pop-fade</enumerationValue>
+                <enumerationValue key="none">none</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="mfToExecute" type="microflow" required="false" defaultValue="">
+            <caption>Badge value</caption>
+            <category>Appearance</category>
+            <description>Microflow which returns a String; value is shown in the badge</description>
+            <returnType type="String" />
+        </property>
+    </properties>
+</widget>
+
