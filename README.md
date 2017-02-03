@@ -1,15 +1,7 @@
-# App Store Widget Boilerplate
+# FaviconBadges
 
-This boilerplate gives you all you need to start a new custom widget for Mendix
-5.6.0 and up.
+This Mendix widget allows you to set a badge (value based on a String) next to your application favicon.
 
-The boilerplate contains:
-- Directory structure
-- Readme.md
-- License
-- JavaScript source
-- XSD for package.xml, to configure properties of the widget, visible inside the
- Mendix business modeler
 
 ## Contributing
 
@@ -17,74 +9,29 @@ For more information on contributing to this repository visit [Contributing to a
 
 ## Typical usage scenario
 
-Use this template to start building a widget for Mendix 5.
-Alter this README.md file and describe what your widget does.
+Useful for when you want to show users how many tasks they have for example
  
 ## Description
 
-The javascript inside the widget has examples of:
-- Using CSS within a widget
-- Using templating
-- Loading external library's
-- DOM manipulation
-- Event attaching
-- Loading data
-- Executing microflow and sending data
-- Working with the context object, which is an object in the current context
-(e.g. the one displayed in a DataView).
+The widget makes use of the favico.js library and allows you to show a badge next to your favicon. The badge shows a String (or a number with toString ;-) ) next to your favicon.
 
-### Dojo AMD module list
 
-The JavaScript contains an extensive list of modules that may be used to build a
-widget. It is best to reduce this list to what is actually used. Use JSHint to
-help identify errors and problems. 
+## Configuration
 
-** Be sure to keep the module name array and the parameter list of the anonymous
-function below the module list in sync! **
+* Drag the widget in a Dataview (Account for example) and select a microflow which returns a String. The widget will update everytime the context object changes. 
+* Set the desired animation type
+* ...
+* Profit
 
-The following modules are necessary for all widgets:
-- dojo/_base/declare
-- mxui/widget/_WidgetBase
-- dijit/_Widget
 
-If your widget does not use an HTML template:
-- Remove dijit/_TemplatedMixin from the module list
-- Remove _Templated from the parameter list of the anonymous function below the module list
-- Remove _Templated from the parameter list of the declare call
-- Remove the templates folder
+## Known issues
 
-If your widget does not need jQuery:
-- Remove WidgetName/widget/lib/jquery from the module list
-- Remove _jQuery from the parameter list of the anonymous function below the module list
-- Remove _jQuery from the parameter list of the declare call
-- Remove jquery.js from src\WidgetName\widget\lib\ Or remove the lib folder if you don't include external libraries in the widget.
+* There must be a <link rel="icon" ..... > present in your index.html, otherwise the default favicon is overwritten and you'll only see the badge.
 
-### AMD caveats
-Working with jQuery can be difficult due to the fact that jquery does not adhere to the AMD standard correctly. Check out [Pull Request #13](https://github.com/mendix/AppStoreWidgetBoilerplate/pull/13) or the [Dojo AMD documentation](http://dojotoolkit.org/documentation/tutorials/1.10/modules/index.html) for details.
+## Roadmap
 
-## Migrating a widget to Dojo AMD
+* No context version of the widget.
+* Refresh the microflow every X seconds so the value gets updated without the need to have (or refresh) your context object.
+* More properties, like coloring, shapes, icons etc.
 
-A widget that uses Dojo AMD may not refer to functions like *dojo.forEach* etc. 
-All necessary modules must be declared on the module list at the top of the source.
 
-Replacing all 'old' Dojo calls in an existing source can be a bit of a pain.
-
-Here is a list of commonly used functions and their new counterpart:
-
-Old | New
----------- |---------- 
-mxui.dom              | domMx
-dojo.byId             | dom.byId
-dojo.query            | document.querySelector
-dojo.forEach          | dojoArray.forEach
-dojo.hitch            | lang.hitch
-dojo.addClass         | domClass.add
-dojo.removeClass      | domClass.remove
-dojo.hasClass         | domClass.contains
-dojo.replaceClass     | domClass.replace
-dojo.empty            | domConstruct.empty
-dojo.place            | domConstruct.place 
-dojo.on               | on
-dojo.window           | win
-  
-The referenced modules are in the module list of the boilerplate JavaScript.
