@@ -26,7 +26,7 @@ The widget makes use of the favico.js library and allows you to show a badge nex
 
 ## Known issues
 
-* There must be a <link rel="icon" ..... > present in your index.html, otherwise the default favicon is overwritten and you'll only see the badge.
+* There must be a `<link rel="icon" ..... > favicon link` present in your index.html, otherwise the default favicon is overwritten and you'll only see the badge.
 
 ## Roadmap
 
