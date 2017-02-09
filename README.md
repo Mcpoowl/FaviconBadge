@@ -1,4 +1,4 @@
-# FaviconBadges
+# FaviconBadge
 
 This Mendix widget allows you to set a badge (value based on a String) next to your application favicon.
 

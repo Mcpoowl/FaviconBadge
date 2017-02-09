@@ -24,6 +24,11 @@
             <description>Microflow which returns a String; value is shown in the badge</description>
             <returnType type="String" />
         </property>
+        <property key="parseToInt" type="boolean" required="true" defaultValue="true">
+            <caption>Parse to Integer</caption>
+            <category>Appearance</category>
+            <description>Tries to parse the value of the microflow to an Integer. This allows the badge to dissapear when the value is 0</description>
+        </property>
     </properties>
 </widget>
 

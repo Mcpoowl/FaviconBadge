@@ -1,6 +1,6 @@
 {
   "name": "FaviconBadge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shows an updateable badge in your browsers favicon. Based on favico.js",
   "license": "Apache 2",
   "author": "Paul Ketelaars",
