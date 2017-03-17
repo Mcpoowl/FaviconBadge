@@ -20,14 +20,54 @@
         </property>
         <property key="mfToExecute" type="microflow" required="false" defaultValue="">
             <caption>Badge value</caption>
-            <category>Appearance</category>
+            <category>Data</category>
             <description>Microflow which returns a String; value is shown in the badge</description>
             <returnType type="String" />
         </property>
         <property key="parseToInt" type="boolean" required="true" defaultValue="true">
             <caption>Parse to Integer</caption>
-            <category>Appearance</category>
+            <category>Data</category>
             <description>Tries to parse the value of the microflow to an Integer. This allows the badge to dissapear when the value is 0</description>
+        </property>
+        <property key="bgColor" type="string" required="false" defaultValue="#d00">
+            <caption>Background color</caption>
+            <category>Appearance</category>
+            <description>Hex value for the background color</description>
+        </property>
+        <property key="textColor" type="string" required="false" defaultValue="#fff">
+            <caption>Text color</caption>
+            <category>Appearance</category>
+            <description>Hex value for the text color</description>
+        </property>
+        <property key="fontFamily" type="string" required="false" defaultValue="sans-serif">
+            <caption>Font Family</caption>
+            <category>Appearance</category>
+            <description>Font of  the badge icon (Arial, Verdana, Times New Roman, serif, sans-serif,...)</description>
+        </property>
+        <property key="fontStyle" type="string" required="false" defaultValue="bold">
+            <caption>Font style</caption>
+            <category>Appearance</category>
+            <description>Style of the font (normal, italic, oblique, bold, bolder, lighter, 100, 200,...)</description>
+        </property>
+        <property key="badgeType" type="enumeration" required="true" defaultValue="circle">
+            <caption>Badge shape</caption>
+            <category>Appearance</category>
+            <description>Shape of the badge</description>
+            <enumerationValues>
+                <enumerationValue key="circle">Circle</enumerationValue>
+                <enumerationValue key="rectangle">Rectangle</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="badgePosition" type="enumeration" defaultValue="down">
+            <caption>Badge position</caption>
+            <category>Appearance</category>
+            <description>Position of the badge on the favicon</description>
+            <enumerationValues>
+                <enumerationValue key="up">Up</enumerationValue>
+                <enumerationValue key="down">Down</enumerationValue>
+                <enumerationValue key="left">Left</enumerationValue>
+                <enumerationValue key="upleft">Up-left</enumerationValue>
+            </enumerationValues>
         </property>
     </properties>
 </widget>

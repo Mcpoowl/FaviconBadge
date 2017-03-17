@@ -4,10 +4,10 @@
     ========================
 
     @file      : FaviconBadge.js
-    @version   : 1.1.0
+    @version   : 1.2
     @author    : Paul Ketelaars
-    @date      : 2017-02-03
-    @copyright : TimeSeries 2016
+    @date      : 2017-03-17
+    @copyright : TimeSeries 2017
     @license   : Apache 2
 
     Documentation
@@ -41,6 +41,13 @@ define([
         mfToExecute: "",
         animation: "",
         parseToInt: "",
+        bgColor: "",
+        textColor: "",
+        fontFamily: "",
+        fontStyle: "",
+        badgeType: "",
+        badgePosition: "",
+
         // Internal variables. Non-primitives created in the prototype are shared between all widget instances.
         _handles: null,
         _contextObj: null,
@@ -63,7 +70,16 @@ define([
               this._readOnly = true;
             }
 
-            this.favicon=new favico({animation:this.animation});
+            this.favicon=new favico(
+                {
+                    animation:this.animation,
+                    bgColor:this.bgColor,
+                    textColor:this.textColor,
+                    fontFamily:this.fontFamily,
+                    fontStyle:this.fontStyle,
+                    type:this.badgeType,
+                    position:this.badgePosition,
+                });
             this._updateRendering();
         },
 
