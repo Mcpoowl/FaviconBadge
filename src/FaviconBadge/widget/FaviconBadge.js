@@ -58,6 +58,7 @@ define([
 
         // dojo.declare.constructor is called to construct the widget instance. Implement to initialize non-primitive properties.
         constructor: function () {
+            logger.level(DEBUG);
             logger.debug(this.id + ".constructor");
             this._handles = [];
         },
@@ -88,13 +89,13 @@ define([
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
         update: function (obj, callback) {
             logger.debug(this.id + ".update");
-                        this._contextObj = obj;
-
+            this._contextObj = obj;
+            if (this._contextObj !== null){
             this._getBadgeValue(this.mfToExecute, this._contextObj.getGuid(), dojoLang.hitch(this, function(string) {
             this._badgeValue = string;
             this._setFavicon(string, callback);
                 }));
-
+          }
 
             this._resetSubscriptions();
             this._updateRendering(callback); // We're passing the callback to updateRendering to be called after DOM-manipulation
@@ -151,7 +152,7 @@ define([
                     }
                 }),
                 error: dojoLang.hitch(this, function(error) {
-                    console.warn(this.id + "._getTooltipMessage error: " + error.description);
+                    console.warn(this.id + ".getBadgeValue error: " + error.description);
                 })
             }, this);
         },
