@@ -123,7 +123,7 @@ define([
                 dojoStyle.set(this.domNode, "display", "none");
             }
             // The callback, coming from update, needs to be executed, to let the page know it finished rendering
-            mendix.lang.nullExec(callback);
+            this._executeCallback(callback, "_render error cb");
         },
 
         _unsubscribe: function () {
@@ -178,6 +178,12 @@ define([
                 this.favicon.badge(string);
             }
         },
+        _executeCallback: function (cb, from) {
+            logger.debug(this.id + "._executeCallback" + (from ? " from " + from : ""));
+            if (cb && typeof cb === "function") {
+                cb();
+            }
+        }
 
         // Reset subscriptions.
         _resetSubscriptions: function () {
